@@ -13,6 +13,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ShoppingbagComponent } from './pages/shoppingbag/shoppingbag.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     HomeComponent,
     ShopComponent,
     ShoppingbagComponent,
-    SignupComponent
+    SignupComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
