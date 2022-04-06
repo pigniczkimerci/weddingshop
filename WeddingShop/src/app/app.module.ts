@@ -9,13 +9,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { DummyComponent } from './dummy/dummy.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { ShoppingbagComponent } from './pages/shoppingbag/shoppingbag.component';
+import { SignupComponent } from './pages/signup/signup.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DummyComponent
+    HomeComponent,
+    ShopComponent,
+    ShoppingbagComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

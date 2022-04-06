@@ -1,0 +1,67 @@
+@import '../../../styles.scss';
+
+.home-bg{
+    width: 100%;
+    height:60vh;
+    background-image: url("../../../assets/bg.jpg");
+    background-repeat: none;
+    background-size: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 150px;
+   
+    #home-wh{
+        font-family: $primary-font;
+        font-size: 5.5em;
+        letter-spacing: 10px;
+        color: $white-color
+    }
+    #home-s{
+        font-family:  $second-font;
+        font-size: 2em;
+        letter-spacing: 5px;
+        color: $second-color-w;
+    }
+
+}
+.aboutus{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 10%;
+    .content{
+        padding: 0 10%;
+        font-family: $third-font;
+        color: $second-color-w;
+        
+        text-align: justify;
+        #c-main-text{
+            font-size: 2.5em;
+            text-align: center;
+            color: $second-color-w;
+        }
+        #c-dec{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+    .content-pic{
+        display: flex;
+        img{
+            margin: 20px;
+        }
+        #cp-hand{
+            width: 300px;
+            height: auto;
+        }
+        #cp-couple{
+            width: 250px;
+            height: auto;
+        }
+        #cp-coupk{
+            margin-top: 70px;
+            width: 300px;
+            height: auto;
+        }
+    }
+}

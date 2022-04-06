@@ -1,0 +1,21 @@
+@import '../../styles.scss';
+
+.toolbar{
+    position: fixed;
+    background-color: $main-color;
+    color: $white-color;
+    display: flex;
+    justify-content: end;
+    
+    #menu-l{
+        font-size: 1.2em;
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        font-family: $primary-font;
+    }
+    .toolbar-links a{
+        font-size: 1em;
+        font-family: $second-font;
+    }
+}
