@@ -1,10 +1,11 @@
 <mat-toolbar class="toolbar">
     <span id="menu-l">WeddingShop</span>
-    <div class="toolbar-links">
+    <div class="toolbar-links" [ngSwitch]='isSignedInA'>
         <a mat-button routerLink="home">Kezdőlap</a>
         <a mat-button routerLink="shop">Termékek</a>
         <a mat-button routerLink="shoppingbag">Kosár</a>
-        <a mat-button routerLink="signup">Bejelentkezés</a>
+        <a *ngSwitchCase=false mat-button routerLink="signup">Bejelentkezés</a>
+        <a *ngSwitchCase=true mat-button routerLink="signup">Log out</a>
         <a mat-button routerLink="registration">Regisztráció</a>
     </div>
 </mat-toolbar>

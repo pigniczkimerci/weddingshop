@@ -15,13 +15,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ShoppingbagComponent } from './pages/shoppingbag/shoppingbag.component';
-import { SignupComponent } from './pages/signup/signup.component';
+
 import { FooterComponent } from './footer/footer.component';
 import { FirebaseService } from './services/firebase.service';
-
+import { LogoutComponent } from './pages/logout/logout.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @NgModule({
@@ -33,6 +38,8 @@ import { FirebaseService } from './services/firebase.service';
     ShoppingbagComponent,
     SignupComponent,
     FooterComponent,
+    LogoutComponent,
+    
 
   ],
   imports: [
@@ -42,6 +49,10 @@ import { FirebaseService } from './services/firebase.service';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatCardModule,
     AngularFireModule.initializeApp({apiKey: "AIzaSyCu0uqzyieykHN8ZG9jDKlRyvZCTMXTHcI",
                                     authDomain: "fir-angular-cbe7c.firebaseapp.com",
                                     projectId: "fir-angular-cbe7c",
