@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
-
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
@@ -9,12 +9,13 @@ import { FirebaseService } from '../../services/firebase.service';
 export class LogoutComponent implements OnInit {
 
   @Output() isLogout = new EventEmitter<void>()
-  constructor(public firebaseService: FirebaseService) { }
+  constructor(public firebaseService: FirebaseService, private router: Router) { }
 
   ngOnInit(): void {
   }
   logout(){
     this.firebaseService.logout()
     this.isLogout.emit()
+    this.router.navigate(["/home"]);
   }
 }

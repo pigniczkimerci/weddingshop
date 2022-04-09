@@ -5,18 +5,12 @@ import { FirebaseService } from '../services/firebase.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
-  providers: [SignupComponent]
+  styleUrls: ['./navbar.component.scss']
 
 })
 export class NavbarComponent implements OnInit {
 
-  isSignedInA: boolean= false;
-  constructor(public sign: SignupComponent) {
-    
-    this.isSignedInA = this.sign.isSignedIn;
-    console.log(this.isSignedInA);
-   }
+  constructor() {}
 
   ngOnInit(): void {
   }

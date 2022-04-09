@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AuthService } from '../app/auth/auth.service.ts.service';
+import { AuthGuard } from './auth/auth.guard';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -39,8 +41,6 @@ import { SignupComponent } from './pages/signup/signup.component';
     SignupComponent,
     FooterComponent,
     LogoutComponent,
-    
-
   ],
   imports: [
     BrowserModule,
@@ -53,6 +53,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     MatInputModule,
     FormsModule,
     MatCardModule,
+    HttpClientModule,
     AngularFireModule.initializeApp({apiKey: "AIzaSyCu0uqzyieykHN8ZG9jDKlRyvZCTMXTHcI",
                                     authDomain: "fir-angular-cbe7c.firebaseapp.com",
                                     projectId: "fir-angular-cbe7c",
@@ -60,7 +61,7 @@ import { SignupComponent } from './pages/signup/signup.component';
                                     messagingSenderId: "993850649502",
                                     appId: "1:993850649502:web:e5e89fe492d30723b9c48f"})
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService,AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

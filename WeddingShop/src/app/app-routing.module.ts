@@ -5,13 +5,20 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { ShopComponent } from './pages/shop/shop.component';
 import { ShoppingbagComponent } from './pages/shoppingbag/shoppingbag.component';
 import { SignupComponent } from './pages/signup/signup.component';
-
+import { LogoutComponent } from './pages/logout/logout.component';
+import { AuthService } from './auth/auth.service.ts.service';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"shop", component:ShopComponent},
   {path:"shoppingbag", component:ShoppingbagComponent},
   {path:"signup", component:SignupComponent},
+  {
+    path:"logout", 
+    component:LogoutComponent,
+    canActivate: [AuthGuard]
+  },
   {path:"registration", component:RegistrationComponent}
 ];
 
