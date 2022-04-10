@@ -1,6 +1,7 @@
 @import '../../styles.scss';
 
 .toolbar{
+    z-index: 100;
     position: fixed;
     background-color: $main-color;
     display: flex;
