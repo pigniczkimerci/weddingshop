@@ -1,1 +1,23 @@
-<p>shop works!</p>
+
+    <mat-grid-list cols="3" rowHeight="2:1">
+        <ng-container *ngFor='let product of products | async'>
+        <mat-grid-tile>
+            <mat-grid-tile-header>
+                <p>{{product.nev}}</p>
+            </mat-grid-tile-header>  
+            <img src={{product.kep}}/>
+            <mat-grid-tile-footer>
+                <p><span>Ár:</span>{{product.ar | currency: "FT"}}</p>
+                <p><span>kategoria</span>{{product.kategoria}}</p>
+            </mat-grid-tile-footer>
+            <button (click)="addToChart($event, product)">BÁTTÖN</button>
+        </mat-grid-tile>
+        </ng-container>
+    </mat-grid-list>
+    <!--<div *ngFor='let product of products'>
+        <img [src]="products.kep"/>
+        <img src={{product.kep}}/>
+        <h2>{{product.nev}} Details</h2>
+        <p><span>Ár:</span>{{product.ar | number}}</p>
+        <p><span>kategoria</span>{{product.kategoria}}</p>
+    </div>-->

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ShopComponent } from '../shop/shop.component';
 @Component({
   selector: 'app-shoppingbag',
   templateUrl: './shoppingbag.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingbagComponent implements OnInit {
 
-  constructor() { }
+ 
+
+  constructor(public shop: ShopComponent) { }
 
   ngOnInit(): void {
+    console.log(this.shop.items);
   }
 
 }

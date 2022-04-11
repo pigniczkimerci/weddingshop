@@ -20,6 +20,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -40,7 +42,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     ShoppingbagComponent,
     SignupComponent,
     FooterComponent,
-    LogoutComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     MatInputModule,
     FormsModule,
     MatCardModule,
+    MatGridListModule,
     HttpClientModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp({apiKey: "AIzaSyCu0uqzyieykHN8ZG9jDKlRyvZCTMXTHcI",
                                     authDomain: "fir-angular-cbe7c.firebaseapp.com",
                                     projectId: "fir-angular-cbe7c",
