@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+.cart{
+    padding: 300px;
+    .c-items{
+        background-color:  $second-color-w;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .mat-list-item{
+        color: $white-color;
+        font-family: $second-font;
+        font-size: 2em;
+        #ar{
+            margin-left: 100px;
+        }
+    }
+}

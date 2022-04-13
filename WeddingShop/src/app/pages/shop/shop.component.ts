@@ -63,7 +63,9 @@ export class ShopComponent implements OnInit {
     //this.productServices.addToChart(product.id);
     //console.log(this.items);
   }
-
+  showAll(){
+    this.products = this.productServices.getProducts();
+  }
   showDekor(){
     this.products = this.productServices.getDekor();
   }

@@ -39,7 +39,7 @@ export class ProductsService {
     return this.asf.collection('weddingshop', ref => ref.where('kategoria', '==', "dekor")).valueChanges();
   }
   getPrice(){
-    return this.asf.collection('weddingshop', ref => ref.where('ar', '>', 5000).orderBy('ar')).valueChanges();
+    return this.asf.collection('weddingshop', ref => ref.where('ar', '>', 4000).orderBy('ar')).valueChanges();
   }
 
   addToChart(product: any){

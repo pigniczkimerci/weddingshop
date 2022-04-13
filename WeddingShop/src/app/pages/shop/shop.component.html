@@ -1,25 +1,31 @@
 <div class="shop">
+  <div class="show">
+    <button (click)="showAll()">ALL</button>
+    <button (click)="showDekor()">CSAK DEKOR</button>
+    <button (click)="showPrice()">4000 > RENDEZVE</button>
+  </div>
     <div class="products">
-      <mat-grid-list [cols]="mybreakpoint" rowHeight="4:3" (window:resize)="handleSize($event)">
+      <mat-grid-list [cols]="mybreakpoint" rowHeight="5:4" (window:resize)="handleSize($event)">
             <ng-container *ngFor='let product of products | async'>
                 <mat-grid-tile class="product">
                     <!--<mat-grid-tile-header>
                     </mat-grid-tile-header>  -->
                     <div class="item">
+                      <p id="id">{{product.id}}</p>
                       <img src={{product.kep}}/>
-                      <p>{{product.nev}}</p>
-                      <p><span>Ár:</span>{{product.ar | format}}</p><br>
+                      <p id="nev">{{product.nev}}</p>
+                      <p id="ar">{{product.ar | format}}</p><br>
                       <!--<mat-grid-tile-footer>
                       </mat-grid-tile-footer>-->
-                      <button mat-button (click)="addToChart($event, product)">BÁTTÖN</button>
+                      <button mat-button (click)="addToChart($event, product)">KOSÁRBA</button>
                     </div>
                 </mat-grid-tile>
             </ng-container>
         </mat-grid-list>
-            <button (click)="showDekor()">DEKOR</button>
-            <button (click)="showPrice()">PRICE</button>
+
     </div>  
      <div class="crud">
+       <h1>Adatbázis frissítése</h1>
           <form [formGroup]="this.formCreate">
             <input placeholder="Nev" formControlName="newNev" type="text" class="input-field col s12" />
             <input placeholder="Ar" formControlName="newAr" type="text" class="input-field col s12" />
