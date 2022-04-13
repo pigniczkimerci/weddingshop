@@ -37,6 +37,7 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FormatPipe } from './pipe/format.pipe';
 import { ProductsService } from './services/products.service';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -69,12 +70,7 @@ import { ProductsService } from './services/products.service';
     HttpClientModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp({apiKey: "AIzaSyCu0uqzyieykHN8ZG9jDKlRyvZCTMXTHcI",
-                                    authDomain: "fir-angular-cbe7c.firebaseapp.com",
-                                    projectId: "fir-angular-cbe7c",
-                                    storageBucket: "fir-angular-cbe7c.appspot.com",
-                                    messagingSenderId: "993850649502",
-                                    appId: "1:993850649502:web:e5e89fe492d30723b9c48f"})
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [FirebaseService,AuthService, AuthGuard, ProductsService],
   bootstrap: [AppComponent]

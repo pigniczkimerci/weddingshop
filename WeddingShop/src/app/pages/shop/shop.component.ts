@@ -37,6 +37,7 @@ export class ShopComponent implements OnInit {
   formDelete = new FormGroup({
     deleteId: new FormControl('')
   })
+  mybreakpoint: number | undefined;
   constructor(private productServices: ProductsService) { }
 
   ngOnInit(): void {
@@ -46,6 +47,10 @@ export class ShopComponent implements OnInit {
       
     })*/
     this.products = this.productServices.getProducts();
+    this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
+  }
+  handleSize(event:any) {
+    this.mybreakpoint = (event.target.innerWidth <= 1000) ? 1 : 4;
   }
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
     //console.log(product);
@@ -83,17 +88,12 @@ export class ShopComponent implements OnInit {
   }
 
   update(){
-    /*if (!this.formUpdate.value.replaceValue) {
-      alert("Cannot Be Empty!");
-    } else {*/
-
     this.productServices.productsCollection.doc(this.formUpdate.value.updateId).update({
        nev: this.formUpdate.value.updateNev,
        ar: this.formUpdate.value.updateAr
       }).then(res => {
         this.formUpdate.reset();
     });
-   // }
   }
 
   delete(){

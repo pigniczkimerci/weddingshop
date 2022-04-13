@@ -1,3 +1,18 @@
-img{
-    width: 200px;
+@import '../../../styles.scss';
+.shop{
+    padding-top: 5%;
+    .products{
+        margin: 40px;
+     .product{
+         box-shadow: $box-shadow;
+         .item{
+             margin: 90px;
+         }
+     }   
+    }
+    img{
+        height: 170px;
+    }
+
 }
+

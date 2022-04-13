@@ -8,22 +8,30 @@
     justify-content: end;
     padding: 20px 40px;
     box-shadow: $box-shadow;
-    #menu-l{
-        color: $white-color;
-        font-size: 1.8em;
-        padding-left: 20px;
+    .home{
         position: absolute;
         left: 0;
-        font-family: $primary-font;
+        text-decoration: none;
+        padding-left: 10px;
+        #icon{
+            color: $white-color;
+        }
+        #menu-l{
+            color: $white-color;
+            font-size: 1.8em;
+            padding-left: 10px;
+            font-family: $primary-font;
+        }
     }
-    .toolbar-links a{
+   
+    .toolbar-links .mat-button-toggle{
         font-size: 1.4em;
         font-family: $second-font;
         color: $white-color;
         font-weight: bold;
         letter-spacing: 3px;
     }    
-    .toolbar-links a:hover{
+    .toolbar-links .mat-button-toggle:hover{
         color: $second-color-w;
     }
 }
