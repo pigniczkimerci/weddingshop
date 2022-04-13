@@ -17,4 +17,45 @@
     <button (click)="showDekor()">DEKOR</button>
     <button (click)="showPrice()">PRICE</button>
 
- 
+ <div >
+    <!--<mat-card class="do half-containers" >
+        <mat-card-title>Új termék</mat-card-title>
+        <mat-form-field  >
+          <mat-label for="nev">Név: </mat-label>
+          <input matInput  [formControl]="this. type="text" #nev />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label for="kep">Kép: </mat-label>
+          <input matInput type="text" #kep/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="ar">Ár: </mat-label>
+            <input matInput type="number" #ar/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="kategoria">Kategoria: </mat-label>
+            <input matInput type="text" #kategoria/>
+        </mat-form-field>
+        <button id="cp-button" (click)="create(nev.value,kep.value, ar.value, kategoria.value)">Sign up</button>
+      </mat-card>-->
+      <form [formGroup]="this.formCreate">
+        <input placeholder="Nev" formControlName="newNev" type="text" class="input-field col s12" />
+        <input placeholder="Ar" formControlName="newAr" type="text" class="input-field col s12" />
+        <input placeholder="Kep" formControlName="newKep" type="text" class="input-field col s12" />
+        <input placeholder="Kategoria" formControlName="newKat" type="text" class="input-field col s12" />
+        <button (click)="create()">
+          Submit
+        </button>
+      </form>
+      <form [formGroup]="this.formUpdate">
+        <input placeholder="ID" formControlName="updateId" type="text" class="input-field col s12" />
+        <input placeholder="Nev" formControlName="updateNev" type="text" class="input-field col s12" />
+        <input placeholder="Ar" formControlName="updateAr" type="text" class="input-field col s12" />
+        <button (click)='update()'>Update</button>
+      </form>
+      <form [formGroup]="this.formDelete">
+        <input placeholder="ID" formControlName="deleteId" type="text" class="input-field col s12" />
+        <button (click)='delete()'>Delete</button>
+      </form>
+      
+ </div>

@@ -26,7 +26,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 
 
-import {FormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ShoppingbagComponent } from './pages/shoppingbag/shoppingbag.component';
@@ -68,6 +68,7 @@ import { ProductsService } from './services/products.service';
     MatRadioModule,
     HttpClientModule,
     AngularFirestoreModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp({apiKey: "AIzaSyCu0uqzyieykHN8ZG9jDKlRyvZCTMXTHcI",
                                     authDomain: "fir-angular-cbe7c.firebaseapp.com",
                                     projectId: "fir-angular-cbe7c",

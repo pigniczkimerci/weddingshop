@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Plugins } from '@capacitor/core';
 import firebase from "firebase/compat/app";
 import { ShopComponent } from '../pages/shop/shop.component';
+import { FormControl, FormGroup } from '@angular/forms';
 const { Storage } = Plugins;
 
 const CART_STORAGE_KEY = "MY_CART";
@@ -18,7 +19,7 @@ export class ProductsService {
   cart = new BehaviorSubject({});
   productsCollection: AngularFirestoreCollection;
   cartKey: string = "";
-  
+
  // items!: ShopComponent;
   constructor(private asf: AngularFirestore) {
 
@@ -45,8 +46,11 @@ export class ProductsService {
       this.items.push(product);
   }
   getCart(){
-
     return this.items;
+  }
+
+  onCreate(){
+    
   }
 
 }
