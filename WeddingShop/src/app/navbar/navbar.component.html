@@ -1,11 +1,12 @@
 <mat-toolbar class="toolbar">
+    <mat-icon>home</mat-icon>
     <span id="menu-l">WeddingShop</span>
-    <div class="toolbar-links">
-        <a mat-button routerLink="home">Kezdőlap</a>
-        <a mat-button routerLink="shop">Termékek</a>
-        <a mat-button routerLink="shoppingbag">Kosár</a>
-        <a mat-button routerLink="signup">Bejelentkezés</a>
-        <a mat-button routerLink="logout">Log out</a>
-    </div>
+    <mat-button-toggle-group class="toolbar-links">
+        <mat-button-toggle routerLink="home">Kezdőlap</mat-button-toggle>
+        <mat-button-toggle routerLink="shop">Termékek</mat-button-toggle>
+        <mat-button-toggle routerLink="shoppingbag">Kosár</mat-button-toggle>
+        <mat-button-toggle routerLink="signup">Bejelentkezés</mat-button-toggle>
+        <mat-button-toggle routerLink="logout">Log out</mat-button-toggle>
+    </mat-button-toggle-group>
 </mat-toolbar>
     

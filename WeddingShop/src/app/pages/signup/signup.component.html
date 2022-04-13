@@ -1,7 +1,7 @@
 
 <div class="log">
   <div class="reg" *ngIf="!isSignedIn">
-    <div class="do half-containers">
+    <mat-card class="do half-containers">
       <mat-card-title>Regisztráció</mat-card-title>
       <mat-form-field>
         <mat-label for="email">Email: </mat-label>
@@ -12,7 +12,7 @@
         <input matInput type="password" #passwordSignup/>
       </mat-form-field>
       <button id="cp-button" (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
-    </div>
+    </mat-card>
     <div class="welchome half-containers">
       <h2>Üdv a WeddingShopnál!</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolores ut non, harum molestiae adipisci quibusdam expedita illo sit suscipit ipsam perferendis tenetur aliquam natus a in quis distinctio officia nulla fuga laudantium. Delectus maxime non recusandae modi, dolorem necessitatibus doloribus consequatur. Ipsum iusto unde quidem in praesentium, quaerat optio. Voluptates sit quibusdam ullam delectus aliquid vero aperiam at alias harum, eum ex adipisci facere laborum minus nemo culpa nihil sint exercitationem voluptatibus, aspernatur cumque, autem quos! Exercitationem voluptates, quas dignissimos nostrum, sint minima odio nobis quo, repellendus eos consectetur ipsam. Assumenda veniam soluta modi debitis aliquam, eaque vitae eveniet quis! Fuga tempora placeat minus, minima nihil dolores modi expedita nesciunt explicabo quisquam vel ipsa at, porro in dolor. Sunt a nemo aspernatur velit doloremque? Et sit cumque quam repellendus exercitationem molestiae est quod perspiciatis, doloremque dolor, ducimus ea ipsam corrupti corporis, iure dignissimos! Repudiandae a, quae nobis officia eaque deleniti dolorem doloribus recusandae, ipsum laborum omnis consequatur similique dolores officiis rerum delectus error aut distinctio dolore perferendis sapiente! Numquam!</p>
@@ -25,7 +25,7 @@
       <h2>Ha már regisztráltál!</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iure debitis ab sed harum architecto optio, dicta, fugiat atque nisi neque commodi similique impedit ad cupiditate repudiandae beatae corrupti dignissimos eos id sequi esse fugit unde facere? Nesciunt provident molestias quidem inventore fugit voluptatibus accusantium totam omnis, sit sapiente perspiciatis mollitia iusto facere eum voluptas, est vitae praesentium doloremque, facilis alias quam temporibus dolorum! Nemo sit dolorum magni. Sequi possimus accusamus quam natus ab sed dicta voluptate explicabo, ut magni quia, eius sunt sit nobis saepe. Similique quam atque provident quidem eveniet odit ratione facilis numquam illum. Mollitia natus aperiam ut amet, earum culpa sit corporis. Tenetur molestiae quibusdam neque suscipit unde eaque, quae architecto laudantium maxime, excepturi numquam ab, sapiente sit. Perferendis inventore minus aspernatur illo? Sit labore minima velit nam eveniet temporibus rerum placeat expedita libero nihil molestiae alias inventore consequuntur nesciunt culpa quos deserunt excepturi asperiores laboriosam voluptatem similique, in dolorem necessitatibus. Explicabo culpa dolore, hic, excepturi itaque animi modi adipisci eos laboriosam numquam dicta. Sapiente inventore, totam non itaque quaerat, quos illum, iure id repellendus nostrum neque ipsum? Id ab inventore, ratione enim in hic pariatur, dolor illo saepe, vel cum dicta voluptatum corrupti quisquam illum.</p>
     </div>
-    <div class="do half-containers">
+    <mat-card class="do half-containers">
       <mat-card-title>Bejelentekzés</mat-card-title>
       <mat-form-field>
         <mat-label for="email">Email: </mat-label>
@@ -36,8 +36,8 @@
         <input matInput type="password" #password/>
       </mat-form-field>
       <button id="cp-button" (click)="onSignin(email.value,password.value)">Sign in</button>
-    </div>
-    
+    </mat-card>
+
   </div>
   
 </div>

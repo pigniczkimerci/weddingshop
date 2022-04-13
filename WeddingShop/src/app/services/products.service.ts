@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Query } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { BehaviorSubject } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection, CollectionReference } from '@angular/fire/compat/firestore';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Plugins } from '@capacitor/core';
 import firebase from "firebase/compat/app";
 import { ShopComponent } from '../pages/shop/shop.component';
@@ -14,52 +14,39 @@ const DECREMENT = firebase.firestore.FieldValue.increment(-1);
   providedIn: 'root'
 })
 export class ProductsService {
-
+  items: any = [];
   cart = new BehaviorSubject({});
   productsCollection: AngularFirestoreCollection;
   cartKey: string = "";
+  
  // items!: ShopComponent;
   constructor(private asf: AngularFirestore) {
 
     this.productsCollection = this.asf.collection("weddingshop");
     //this.loadCard();
-    
   }
 
   ngOnInit(): void {
+
   }
 
   getProducts(){
     return this.productsCollection.valueChanges({idField: "id" } );
   }
 
-  /*async loadCard(){
-    const res = await Storage['get']({key: CART_STORAGE_KEY});
-    if(res.value){
-      this.cartKey = res.value;
-      this.asf.collection("carts").doc(this.cartKey).valueChanges().subscribe((result: any) =>{
-        console.log("megváltoztott", result)
-      })
-      //már van cart
-      console.log("dd")
-    }else{
-     /* const fbDocument = await this.asf.collection("cart").add({
-        lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
-      });
-      console.log("new c", fbDocument);
-      this.cartKey = fbDocument.id;
-      await Storage['set']({key: CART_STORAGE_KEY, value: this.cartKey})*/
- //   }
-  //}
+  getDekor(){
+    return this.asf.collection('weddingshop', ref => ref.where('kategoria', '==', "dekor")).valueChanges();
+  }
+  getPrice(){
+    return this.asf.collection('weddingshop', ref => ref.where('ar', '>', 5000).orderBy('ar')).valueChanges();
+  }
 
-  addToChart(id:any){
-      this.asf.collection("carts").doc(this.cartKey).update({
-        [id]: INCREMENT,
-        lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
-      });
-      this.productsCollection.doc(id).update({
-        stock: DECREMENT
-      });
+  addToChart(product: any){
+      this.items.push(product);
+  }
+  getCart(){
+
+    return this.items;
   }
 
 }

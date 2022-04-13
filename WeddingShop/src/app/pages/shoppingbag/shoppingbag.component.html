@@ -1,1 +1,21 @@
-<p>shoppingbag works!</p>
+<!--<mat-grid-list cols="3" rowHeight="2:1">
+    <ng-container *ngFor='let product of cart'>
+    <mat-grid-tile>
+        <mat-grid-tile-header>
+            <p>{{product.nev}}</p>
+        </mat-grid-tile-header>  
+        <img src={{product.kep}}/>
+        <mat-grid-tile-footer>
+            <p><span>Ár:</span>{{product.ar | currency: "FT"}}</p>
+            <p><span>kategoria</span>{{product.kategoria}}</p>
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+    </ng-container>
+</mat-grid-list>-->
+
+<mat-list >
+    <mat-list-item *ngFor='let product of cart'> 
+        <p>{{product.nev}}</p>
+        <p>{{product.ar}}</p>
+    </mat-list-item>
+</mat-list>

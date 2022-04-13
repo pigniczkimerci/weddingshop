@@ -17,10 +17,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './pages/home/home.component';
@@ -31,6 +35,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FirebaseService } from './services/firebase.service';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { FormatPipe } from './pipe/format.pipe';
+import { ProductsService } from './services/products.service';
 
 
 @NgModule({
@@ -42,7 +48,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     ShoppingbagComponent,
     SignupComponent,
     FooterComponent,
-    LogoutComponent
+    LogoutComponent,
+    FormatPipe
   ],
   imports: [
     BrowserModule,
@@ -56,6 +63,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     FormsModule,
     MatCardModule,
     MatGridListModule,
+    MatListModule,
+    MatButtonToggleModule,
+    MatRadioModule,
     HttpClientModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp({apiKey: "AIzaSyCu0uqzyieykHN8ZG9jDKlRyvZCTMXTHcI",
@@ -65,7 +75,7 @@ import { SignupComponent } from './pages/signup/signup.component';
                                     messagingSenderId: "993850649502",
                                     appId: "1:993850649502:web:e5e89fe492d30723b9c48f"})
   ],
-  providers: [FirebaseService,AuthService, AuthGuard],
+  providers: [FirebaseService,AuthService, AuthGuard, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

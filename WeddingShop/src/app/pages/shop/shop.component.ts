@@ -19,6 +19,7 @@ export interface Termekek {
 export class ShopComponent implements OnInit {
   //products:any = [];
   products: Observable<any[]> | undefined;
+  dekor: Observable<any[]> | undefined;
   items: any = [];
   constructor(private productServices: ProductsService) { }
 
@@ -31,11 +32,21 @@ export class ShopComponent implements OnInit {
     this.products = this.productServices.getProducts();
   }
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
-    console.log(product);
+    //console.log(product);
     event.stopPropagation();
-    this.items.push(product);
+
+
+    //this.items.push(product);
+
+    this.productServices.addToChart(product);
     //this.productServices.addToChart(product.id);
-    console.log(this.items);
+    //console.log(this.items);
   }
 
+  showDekor(){
+    this.products = this.productServices.getDekor();
+  }
+  showPrice(){
+    this.products = this.productServices.getPrice();
+  }
 }
