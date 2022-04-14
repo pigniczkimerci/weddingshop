@@ -1,14 +1,60 @@
-<mat-toolbar class="toolbar">
-    <a href="/home" class="home">
-        <mat-icon id="icon">home</mat-icon>
-        <span id="menu-l">WeddingShop</span>
-    </a>
-    <mat-button-toggle-group class="toolbar-links">
-        <mat-button-toggle routerLink="home">Kezdőlap</mat-button-toggle>
-        <mat-button-toggle routerLink="shop">Termékek</mat-button-toggle>
-        <mat-button-toggle routerLink="shoppingbag">Kosár</mat-button-toggle>
-        <mat-button-toggle routerLink="signup">Bejelentkezés</mat-button-toggle>
-        <mat-button-toggle routerLink="logout">Log out</mat-button-toggle>
-    </mat-button-toggle-group>
-</mat-toolbar>
+ <!--<div class="nav">
+     <mat-toolbar class="toolbar" fxLayout="row">
+        <a href="/home" class="home">
+            <mat-icon id="icon">home</mat-icon>
+            <span id="menu-l">WeddingShop</span>
+        </a>
+        <mat-button-toggle-group class="toolbar-links doboz"  fxShow="true" fxHide.lt-md="true">
+            <mat-button-toggle routerLink="home">Kezdőlap</mat-button-toggle>
+            <mat-button-toggle routerLink="shop">Termékek</mat-button-toggle>
+            <mat-button-toggle routerLink="shoppingbag">Kosár</mat-button-toggle>
+            <mat-button-toggle routerLink="signup">Bejelentkezés</mat-button-toggle>
+            <mat-button-toggle routerLink="logout">Log out</mat-button-toggle>
+        </mat-button-toggle-group>
+        
+       
+       
+        <div fxShow="true" fxHide.gt-sm="true" class="doboz">
+
+            <button (click)="sidenav.toggle()">Show Side Menu</button>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            
+          </div>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+        <mat-sidenav #sidenav fxLayout="column" mode="side"  opened="true" fxHide.gt-sm="true">
+          <div fxLayout="column doboz">
+            <mat-button-toggle routerLink="home">Kezdőlap</mat-button-toggle>
+            <mat-button-toggle routerLink="shop">Termékek</mat-button-toggle>
+            <mat-button-toggle routerLink="shoppingbag">Kosár</mat-button-toggle>
+            <mat-button-toggle routerLink="signup">Bejelentkezés</mat-button-toggle>
+            <mat-button-toggle routerLink="logout">Log out</mat-button-toggle>
     
+          </div>
+    
+        </mat-sidenav>
+      </mat-sidenav-container> 
+</div>-->
+
+<mat-toolbar class="navbar"  [ngClass]="{'navbar-fixed': isFixedNavbar}">
+  <div class="container" fxLayout="row wrap" fxLayoutAlign="start center">
+     <div class="navbar-mobile-top" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start center">
+        <div class="navbar-logo">
+           <a routerLink="/home">Logo</a>
+        </div>
+        <button mat-icon-button color="accent" class="navbar-toggle" (click)="toggleNavbar()">
+           <mat-icon>{{!navbarOpened ? 'menu': 'close'}}</mat-icon>
+        </button>
+     </div>
+     <div fxFlex class="top-navbar">
+        <span fxFlex></span>
+        <a mat-button  class="navbartop-btn" routerLink="home">Kezdőlap</a>
+        <a mat-button  class="navbartop-btn" routerLink="shop">Termékek</a>
+        <a mat-button  class="navbartop-btn" routerLink="shoppingbag">Kosár</a>
+        <a mat-button  class="navbartop-btn" routerLink="signup">Bejelentkezés</a>
+        <a mat-button  class="navbartop-btn" routerLink="logout">Log out</a>
+     </div>
+  </div>
+</mat-toolbar>

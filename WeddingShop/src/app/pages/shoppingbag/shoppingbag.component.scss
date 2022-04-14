@@ -1,17 +1,35 @@
 @import '../../../styles.scss';
-.cart{
+
+.cart {
     padding: 300px;
-    .c-items{
-        background-color:  $second-color-w;
+
+    .c-items {
+        background-color: $second-color-w;
         border-radius: 20px;
         padding: 20px;
     }
-    .mat-list-item{
+
+    .mat-list-item {
         color: $white-color;
         font-family: $second-font;
         font-size: 2em;
-        #ar{
+
+        #ar {
             margin-left: 100px;
+        }
+    }
+}
+
+@media screen and(max-width: 1360px) {
+    .cart {
+        padding: 100px;
+        .c-items {
+            .mat-list-item {
+                font-size: 1em;
+            }
+            #ar {
+                margin-left: 50px;
+            }
         }
     }
 }

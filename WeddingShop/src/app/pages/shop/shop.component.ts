@@ -38,6 +38,7 @@ export class ShopComponent implements OnInit {
     deleteId: new FormControl('')
   })
   mybreakpoint: number | undefined;
+  
   constructor(private productServices: ProductsService) { }
 
   ngOnInit(): void {
@@ -50,7 +51,7 @@ export class ShopComponent implements OnInit {
     this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
   }
   handleSize(event:any) {
-    this.mybreakpoint = (event.target.innerWidth <= 1000) ? 1 : 4;
+    this.mybreakpoint = (event.target.innerWidth <= 1300) ? 1 : 4;
   }
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
     //console.log(product);

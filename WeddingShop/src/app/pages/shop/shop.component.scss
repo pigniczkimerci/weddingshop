@@ -1,6 +1,6 @@
 @import '../../../styles.scss';
 .shop{
-    padding-top: 5%;
+    padding-top: 8%;
     .show{
         display: flex;
         justify-content: center;
@@ -21,7 +21,7 @@
     }
     .products{
         margin: 40px;
-        .product{
+        .product{ 
             box-shadow: $box-shadow;
             border-radius: 20px;
             text-align: center;
@@ -121,3 +121,102 @@
    
 }
 
+@media screen and(max-width: 1860px) {
+    .products{
+        .product{ 
+            .item{
+                img{
+                    height: 100px !important;
+                }
+            }
+        }
+    }
+}
+@media screen and(max-width: 1450px) {
+    .shop{
+        padding-top: 13%;
+    .products{
+        .product{ 
+            .item{
+                img{
+                    height: 100px !important;
+                }
+                #nev{
+                    font-size: 1.1em !important;
+                }
+                #ar{
+                    font-size:0.7em !important;
+                }
+                button{
+                    font-size: 11px !important;
+                    padding: 0.2em 0.5em !important;
+                }
+            }
+        }
+    }
+}
+}
+@media screen and(max-width: 1300px) {
+    .products{
+        .product{ 
+            
+            .item{
+                img{
+                    height: 500px !important;
+                }
+                #nev{
+                    font-size: 2.7em !important;
+                }
+                #ar{
+                    font-size:2.2em !important;
+                }
+                button{
+                    font-size: 20px !important;
+                    padding: 0.8em 1.5em !important;
+                }
+            }
+        }
+    }
+}
+@media screen and(max-width: 1030px) {
+    .products{
+        .product{ 
+            .item{
+                img{
+                    height: 300px !important;
+                }
+                #nev{
+                    font-size: 2em !important;
+                }
+                #ar{
+                    font-size:1.6em !important;
+                }
+                button{
+                    font-size: 13px !important;
+                    padding: 0.8em 1.5em !important;
+                }
+            }
+        }
+    }
+}
+@media screen and(max-width: 720px) {
+    .products{
+        .product{ 
+            .item{
+                img{
+                    height: 200px !important;
+                }
+                #nev{
+                    font-size: 1.5em !important;
+                }
+                #ar{
+                    font-size:1.1em !important;
+                }
+                button{
+                    font-size: 11px !important;
+                
+                }
+            }
+        }
+    }
+}

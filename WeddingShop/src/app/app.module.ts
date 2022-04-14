@@ -24,7 +24,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
@@ -38,6 +38,9 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { FormatPipe } from './pipe/format.pipe';
 import { ProductsService } from './services/products.service';
 import { environment } from 'src/environments/environment';
+
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -66,10 +69,12 @@ import { environment } from 'src/environments/environment';
     MatGridListModule,
     MatListModule,
     MatButtonToggleModule,
+    MatSidenavModule,
     MatRadioModule,
     HttpClientModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [FirebaseService,AuthService, AuthGuard, ProductsService],

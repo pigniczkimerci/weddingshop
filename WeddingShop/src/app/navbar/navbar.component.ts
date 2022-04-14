@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostBinding, HostListener} from '@angular/core';
 import { SignupComponent } from '../pages/signup/signup.component';
 import { FirebaseService } from '../services/firebase.service';
 
@@ -10,11 +10,33 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class NavbarComponent implements OnInit {
 
+  public show:boolean = false;
+  isFixedNavbar: any;
+  @HostBinding('class.navbar-opened') navbarOpened = false;
+
+  opened = false;
+
   constructor() {}
 
   ngOnInit(): void {
   }
+  /*toggle(){
+    this.show = !this.show;
+  }*/
 
   
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if(offset > 10) {
+      this.isFixedNavbar = true;
+    } else {
+      this.isFixedNavbar = false;
+    }
+  }
+
+  toggleNavbar() {
+    this.navbarOpened = !this.navbarOpened;
+  }
   
 }
