@@ -4,22 +4,12 @@ import { Observable } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
 import { v4 as uuidv4} from "uuid";
 
-/*export interface Termekek {
-  cols: number;
-  rows: number;
-  text: string;
-  pic: string;
-  price: number;
-
- }*/
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  //products:any = [];
   products: Observable<any[]> | undefined;
   dekor: Observable<any[]> | undefined;
   items: any = [];
@@ -42,11 +32,6 @@ export class ShopComponent implements OnInit {
   constructor(private productServices: ProductsService) { }
 
   ngOnInit(): void {
-   /* this.productServices.getProducts().subscribe(res =>{
-      console.log("fff: ", res);
-      this.products = res;
-      
-    })*/
     this.products = this.productServices.getProducts();
     this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
   }
@@ -54,15 +39,8 @@ export class ShopComponent implements OnInit {
     this.mybreakpoint = (event.target.innerWidth <= 1300) ? 1 : 4;
   }
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
-    //console.log(product);
     event.stopPropagation();
-
-
-    //this.items.push(product);
-
     this.productServices.addToChart(product);
-    //this.productServices.addToChart(product.id);
-    //console.log(this.items);
   }
   showAll(){
     this.products = this.productServices.getProducts();

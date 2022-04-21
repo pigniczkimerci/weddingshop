@@ -8,15 +8,11 @@
       <mat-grid-list [cols]="mybreakpoint"  rowHeight="5:4" (window:resize)="handleSize($event)">
             <ng-container *ngFor='let product of products | async'>
                 <mat-grid-tile class="product">
-                    <!--<mat-grid-tile-header>
-                    </mat-grid-tile-header>  -->
                     <div class="item">
                       <p id="id">{{product.id}}</p>
                       <img src={{product.kep}}/>
                       <p id="nev">{{product.nev}}</p>
                       <p id="ar">{{product.ar | format}}</p><br>
-                      <!--<mat-grid-tile-footer>
-                      </mat-grid-tile-footer>-->
                       <button mat-button (click)="addToChart($event, product)">KOSÁRBA</button>
                     </div>
                 </mat-grid-tile>

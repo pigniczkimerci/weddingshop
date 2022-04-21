@@ -14,7 +14,10 @@ export class SignupComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl('')
   })
-
+  public signInForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  })
   public isSignedIn = false
   constructor(public firebaseService : FirebaseService) { }
 
@@ -44,6 +47,6 @@ export class SignupComponent implements OnInit {
     localStorage.removeItem('user');
   }
   onSubmit() {
-    console.log(this.signUpForm.value);
+    
   }
 }

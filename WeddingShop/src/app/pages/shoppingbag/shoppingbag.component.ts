@@ -16,9 +16,6 @@ export class ShoppingbagComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   //console.log(this.productServices.addToChart("Mn3AwL0U99B81PA1S1Vu"))
-   //console.log(this.productServices.items)
-
     this.cart = this.productServices.items;
 
   }

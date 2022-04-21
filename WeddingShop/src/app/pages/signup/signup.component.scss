@@ -8,11 +8,9 @@
         height: 100%;
     }
     .do{
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-       /* align-items: center;*/
         text-align: center;
         .mat-card-title{
             font-family: $primary-font;
@@ -21,17 +19,23 @@
             padding: 70px;
             color: $second-color-d;
         }
-        .mat-input-element {
-            /*border: 0.125em solid $second-color-w;*/
-            padding: 20px;
-            margin: 20px;
-            width: 90%;
-            
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(208, 182, 168, 0.144);
-            background: rgba(208, 182, 168, 0.274);
-        }
+        form{
+            display: flex;
+            flex-direction: column;
 
+            .mat-input-element {
+                /*border: 0.125em solid $second-color-w;*/
+                padding: 20px;
+                margin: 20px;
+                width: 90%;
+                
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(208, 182, 168, 0.144);
+                background: rgba(208, 182, 168, 0.274);
+            }
+    
+        }
+        
 
     }
     .welchome{

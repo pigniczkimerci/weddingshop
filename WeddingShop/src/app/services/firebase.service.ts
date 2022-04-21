@@ -28,5 +28,6 @@ export class FirebaseService {
     this.firebaseAuth.signOut();
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    this.isLoggedIn = false;
   }
 }

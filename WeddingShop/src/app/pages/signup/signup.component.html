@@ -3,15 +3,17 @@
   <div class="reg" *ngIf="!isSignedIn">
     <mat-card class="do half-containers">
       <mat-card-title>Regisztráció</mat-card-title>
-      <mat-form-field>
-        <mat-label for="email">Email: </mat-label>
-        <input matInput type="text" #emailSignup/>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label for="email">Jelszó: </mat-label>
-        <input matInput type="password" #passwordSignup/>
-      </mat-form-field>
+      <form [formGroup]="signUpForm">
+        <mat-form-field>
+          <mat-label for="email">Email: </mat-label>
+          <input matInput type="text" #emailSignup/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label for="email">Jelszó: </mat-label>
+          <input matInput type="password" #passwordSignup/>
+        </mat-form-field>
       <button id="cp-button" (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
+      </form>
     </mat-card>
     <div class="welchome half-containers">
       <h2>Üdv a WeddingShopnál!</h2>
@@ -27,6 +29,7 @@
     </div>
     <mat-card class="do half-containers">
       <mat-card-title>Bejelentekzés</mat-card-title>
+      <form [formGroup]="signInForm">
       <mat-form-field>
         <mat-label for="email">Email: </mat-label>
         <input matInput type="text" #email/>
@@ -36,13 +39,12 @@
         <input matInput type="password" #password/>
       </mat-form-field>
       <button id="cp-button" (click)="onSignin(email.value,password.value)">Sign in</button>
+      </form>
     </mat-card>
 
   </div>
   
 </div>
-
-  <!--<app-logout *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-logout>-->
 <app-logout *ngIf="isSignedIn" (isLogout) = "handleLogout()">
 
 </app-logout>

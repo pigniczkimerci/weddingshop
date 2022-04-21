@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class AuthService {
     constructor(private http: HttpClient) { }
     isAuthenticated() {
-        //return this.http.get('/auth/isAuthenticated');
        return !!localStorage.getItem("token")
     }
 }

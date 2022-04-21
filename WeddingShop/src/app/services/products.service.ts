@@ -20,11 +20,9 @@ export class ProductsService {
   productsCollection: AngularFirestoreCollection;
   cartKey: string = "";
 
- // items!: ShopComponent;
   constructor(private asf: AngularFirestore) {
 
     this.productsCollection = this.asf.collection("weddingshop");
-    //this.loadCard();
   }
 
   ngOnInit(): void {

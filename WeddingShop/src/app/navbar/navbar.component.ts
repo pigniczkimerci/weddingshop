@@ -16,14 +16,10 @@ export class NavbarComponent implements OnInit {
 
   opened = false;
 
-  constructor() {}
+  constructor(public firebaseService: FirebaseService) {}
 
   ngOnInit(): void {
   }
-  /*toggle(){
-    this.show = !this.show;
-  }*/
-
   
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -37,6 +33,9 @@ export class NavbarComponent implements OnInit {
 
   toggleNavbar() {
     this.navbarOpened = !this.navbarOpened;
+  }
+  get userInfo(){
+    return this.firebaseService.isLoggedIn;
   }
   
 }
