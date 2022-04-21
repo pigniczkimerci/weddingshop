@@ -31,6 +31,9 @@ export class SignupComponent implements OnInit {
     await this.firebaseService.signup(email,password)
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
+    const a =[];
+    a.push({name: email, password: password});
+    localStorage.setItem('token',JSON.stringify(a));
   }
   async onSignin(email:string,password:string){
     await this.firebaseService.signin(email,password)
@@ -39,14 +42,11 @@ export class SignupComponent implements OnInit {
     const a =[];
     a.push({name: email, password: password});
     localStorage.setItem('token',JSON.stringify(a));
-    console.log(localStorage.getItem)
   }
   handleLogout(){
     this.isSignedIn = false
     localStorage.removeItem('token');
     localStorage.removeItem('user');
   }
-  onSubmit() {
-    
-  }
+
 }

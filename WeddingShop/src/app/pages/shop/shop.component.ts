@@ -3,14 +3,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
 import { v4 as uuidv4} from "uuid";
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  products: Observable<any[]> | undefined;
+  products: any[] | undefined;
+  productsQ: Observable<any[]> | undefined;
   dekor: Observable<any[]> | undefined;
   items: any = [];
   formCreate = new FormGroup({
@@ -32,7 +32,8 @@ export class ShopComponent implements OnInit {
   constructor(private productServices: ProductsService) { }
 
   ngOnInit(): void {
-    this.products = this.productServices.getProducts();
+    this.productsQ = this.productServices.getProducts();
+    this.showAll();
     this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
   }
   handleSize(event:any) {
@@ -43,45 +44,56 @@ export class ShopComponent implements OnInit {
     this.productServices.addToChart(product);
   }
   showAll(){
-    this.products = this.productServices.getProducts();
+    this.productServices.getProducts().subscribe((res) => {
+      this.products = res;
+    })
   }
   showDekor(){
-    this.products = this.productServices.getDekor();
+    this.productServices.getDekor().subscribe((res) => {
+      this.products = res;
+    })
   }
 
   showPrice(){
-    this.products = this.productServices.getPrice();
-  }
-
-  create(){
-    this.productServices.productsCollection.add({
-        nev: this.formCreate.value.newNev,
-        ar : this.formCreate.value.newAr,
-        kep: this.formCreate.value.newKep,
-        kat: this.formCreate.value.newKat
-    })
-    .then(res => {
-        this.formCreate.reset();
-    })
-    .catch(e => {
-        console.log(e);
+    this.productServices.getPrice().subscribe((res) => {
+      this.products = res;
     })
   }
 
-  update(){
-    this.productServices.productsCollection.doc(this.formUpdate.value.updateId).update({
-       nev: this.formUpdate.value.updateNev,
-       ar: this.formUpdate.value.updateAr
+  async create(){
+    return new Promise((resolve, reject) => 
+      this.productServices.productsCollection.add({
+          nev: this.formCreate.value.newNev,
+          ar : this.formCreate.value.newAr,
+          kep: this.formCreate.value.newKep,
+          kat: this.formCreate.value.newKat
+      })
+      .then(res => {
+          this.formCreate.reset();
+      })
+      .catch(e => {
+          reject();
+    }));
+  }
+
+  async update(){
+    return new Promise((resolve, reject) => 
+      this.productServices.productsCollection.doc(this.formUpdate.value.updateId).update({
+        nev: this.formUpdate.value.updateNev,
+        ar: this.formUpdate.value.updateAr,
       }).then(res => {
         this.formUpdate.reset();
-    });
+      }).catch(e =>{
+        reject();
+    }));
   }
 
-  delete(){
-    if (confirm('Delete?')) {
-      this.productServices.productsCollection.doc(this.formDelete.value.deleteId).delete();
-    }
-    this.formDelete.reset();
+  async delete(){
+    return new Promise((resolve, reject) => 
+    this.productServices.productsCollection.doc(this.formDelete.value.deleteId).delete()
+    ).then(re =>{
+      this.formDelete.reset();
+    });
   }
 
 
