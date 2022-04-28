@@ -4,8 +4,8 @@ import { ProductsService } from 'src/app/services/products.service';
 import { ShopComponent } from '../shop/shop.component';
 @Component({
   selector: 'app-shoppingbag',
-  templateUrl: './shoppingbag.component.html',
-  styleUrls: ['./shoppingbag.component.scss']
+  templateUrl: './shoppingcart.component.html',
+  styleUrls: ['./shoppingcart.component.scss']
 })
 export class ShoppingbagComponent implements OnInit {
 

@@ -7,7 +7,7 @@
     <div class="products">
       <mat-grid-list [cols]="mybreakpoint"  rowHeight="5:4" (window:resize)="handleSize($event)">
             <ng-container *ngFor='let product of products'>
-                <mat-grid-tile class="product">
+                <mat-grid-tile class="product" >
                     <div class="item">
                       <p id="id">{{product.id}}</p>
                       <img src={{product.kep}}/>

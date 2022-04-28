@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Product } from 'src/app/model/product';
 import { ProductsService } from 'src/app/services/products.service';
-import { v4 as uuidv4} from "uuid";
+
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  products: any[] | undefined;
-  productsQ: Observable<any[]> | undefined;
+  @Input() products: any[] | undefined;
+  @Input() productsQ: Observable<any[]> | undefined;
   dekor: Observable<any[]> | undefined;
   items: any = [];
   formCreate = new FormGroup({

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-
+  users: Array<User> = [];
   public signUpForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
@@ -31,17 +32,15 @@ export class SignupComponent implements OnInit {
     await this.firebaseService.signup(email,password)
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
-    const a =[];
-    a.push({name: email, password: password});
-    localStorage.setItem('token',JSON.stringify(a));
+    this.users.push({email: email, password: password});
+    localStorage.setItem('token',JSON.stringify(this.users));
   }
   async onSignin(email:string,password:string){
     await this.firebaseService.signin(email,password)
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
-    const a =[];
-    a.push({name: email, password: password});
-    localStorage.setItem('token',JSON.stringify(a));
+    this.users.push({email: email, password: password});
+    localStorage.setItem('token',JSON.stringify(this.users));
   }
   handleLogout(){
     this.isSignedIn = false

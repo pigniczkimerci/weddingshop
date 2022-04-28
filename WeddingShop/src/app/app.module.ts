@@ -29,7 +29,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
-import { ShoppingbagComponent } from './pages/shoppingbag/shoppingbag.component';
+import { ShoppingbagComponent } from './pages/shoppingcart/shoppingcart.component';
 
 import { FooterComponent } from './footer/footer.component';
 import { FirebaseService } from './services/firebase.service';
