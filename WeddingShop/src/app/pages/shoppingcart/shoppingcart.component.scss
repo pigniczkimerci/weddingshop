@@ -7,17 +7,14 @@
         background-color: $second-color-w;
         border-radius: 20px;
         padding: 20px;
-    }
-
-    .mat-list-item {
-        color: $white-color;
-        font-family: $second-font;
-        font-size: 2em;
-
-        #ar {
-            margin-left: 100px;
+        .mat-list-item {
+            color: $white-color;
+            font-family: $second-font;
+            font-size: 1.5em;
         }
     }
+
+   
 }
 
 @media screen and(max-width: 1360px) {
