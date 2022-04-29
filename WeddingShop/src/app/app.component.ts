@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 
 @Component({
@@ -9,10 +9,15 @@ import { FirebaseService } from './services/firebase.service';
 export class AppComponent implements OnInit{
   title = 'firebase-angular-auth';
 
-  constructor(){}
+  constructor(public firebaseService: FirebaseService){}
   ngOnInit(){
 
   }
 
+  @HostListener('window:beforeunload', ['$event'])
+  unloadHandler(event: any) {
+    this.firebaseService.logout();
+    this.firebaseService.isLoggedIn = false;
+  }
 
 }

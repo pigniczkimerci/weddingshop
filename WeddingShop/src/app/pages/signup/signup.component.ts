@@ -3,6 +3,7 @@ import { FirebaseService } from '../../services/firebase.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { User } from 'src/app/model/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +21,7 @@ export class SignupComponent implements OnInit {
     password: new FormControl('')
   })
   public isSignedIn = false
-  constructor(public firebaseService : FirebaseService) { }
+  constructor(public firebaseService : FirebaseService, private router: Router) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('user')!== null)
@@ -34,6 +35,7 @@ export class SignupComponent implements OnInit {
     this.isSignedIn = true
     this.users.push({email: email, password: password});
     localStorage.setItem('token',JSON.stringify(this.users));
+    this.router.navigate(["/home"]);
   }
   async onSignin(email:string,password:string){
     await this.firebaseService.signin(email,password)
@@ -41,11 +43,15 @@ export class SignupComponent implements OnInit {
     this.isSignedIn = true
     this.users.push({email: email, password: password});
     localStorage.setItem('token',JSON.stringify(this.users));
+    this.router.navigate(["/home"]);
   }
-  handleLogout(){
+  onDestroy(){
     this.isSignedIn = false
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+  }
+  handleLogout(){
+
   }
 
 }
