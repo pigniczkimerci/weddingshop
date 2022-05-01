@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 const { Storage } = Plugins;
 import { Product } from '../model/product';
+import { Cart } from '../model/cart.model';
 
 const CART_STORAGE_KEY = "MY_CART";
 const INCREMENT = firebase.firestore.FieldValue.increment(1);
@@ -19,8 +20,10 @@ const DECREMENT = firebase.firestore.FieldValue.increment(-1);
   providedIn: 'root'
 })
 export class ProductsService {
+  total: number = 0;
   items: Array<Product> = [];
-  cart = new BehaviorSubject({});
+  cartItems: Array<Cart> = [];
+  //cart = new BehaviorSubject({});
   productsCollection: AngularFirestoreCollection;
   cartKey: string = "";
 
@@ -46,6 +49,14 @@ export class ProductsService {
 
   addToChart(product: any) {
       this.items.push(product);
+      this.cartItems.push(product);
+
+  }
+  sum(){
+    for (let index = 0; index < this.cartItems.length; index++) {
+      this.total += Number(this.cartItems[index].ar);
+    }
+    return this.total;
   }
   getCart() {
     return this.items;
