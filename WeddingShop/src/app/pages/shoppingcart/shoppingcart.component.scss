@@ -1,31 +1,52 @@
 @import '../../../styles.scss';
 
 .cart {
-    padding: 300px;
-
+    margin: 200px 50px;
+    display: flex;
+    justify-content: center;
+    background-color: $second-color-w;
+    border-radius: 20px;
+    width: 90%;
+    border-collapse: collapse;
     .c-items {
-        background-color: $second-color-w;
-        border-radius: 20px;
         padding: 20px;
-        .mat-list-item {
+        width: 100%;
+        text-align: center;
+        tr {
+            display: flex;
+            justify-content: space-around;
             color: $white-color;
             font-family: $second-font;
-            font-size: 1.5em;
+            
+            th{
+                font-size: 1.7em;
+            }
+            td{
+                font-size: 1.5em;
+            }
+            th, td{
+                width: 500px;
+                padding: 10px;
+            }
         }
     }
-
-   
 }
 
-@media screen and(max-width: 1360px) {
+@media screen and(max-width: 530px) {
     .cart {
-        padding: 100px;
+        width: 80%;
         .c-items {
-            .mat-list-item {
-                font-size: 1em;
-            }
-            #ar {
-                margin-left: 50px;
+            padding: 10px;
+            tr {
+                th{
+                    font-size: 1.1em;
+                }
+                td{
+                    font-size: 1em;
+                }
+                th, td{
+                    width: 300px;
+                }
             }
         }
     }

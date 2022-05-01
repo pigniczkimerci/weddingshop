@@ -13,11 +13,11 @@ export class ShoppingbagComponent implements OnInit {
 
   constructor(private productServices: ProductsService) {
     
-   }
+  }
 
   ngOnInit(): void {
     this.cart = this.productServices.items;
-
+    
   }
 
 }

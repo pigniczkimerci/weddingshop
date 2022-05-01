@@ -14,10 +14,10 @@ export class AppComponent implements OnInit{
 
   }
 
-  @HostListener('window:beforeunload', ['$event'])
+/*   @HostListener('window:beforeunload', ['$event'])
   unloadHandler(event: any) {
     this.firebaseService.logout();
     this.firebaseService.isLoggedIn = false;
-  }
+  } */
 
 }

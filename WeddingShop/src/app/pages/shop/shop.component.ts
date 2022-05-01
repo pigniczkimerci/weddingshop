@@ -13,7 +13,7 @@ export class ShopComponent implements OnInit {
   @Input() products: any[] | undefined;
   @Input() productsQ: Observable<any[]> | undefined;
   dekor: Observable<any[]> | undefined;
-  items: any = [];
+  //items: any = [];
   formCreate = new FormGroup({
     newNev: new FormControl(''),
     newAr: new FormControl(''),
@@ -43,6 +43,11 @@ export class ShopComponent implements OnInit {
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
     event.stopPropagation();
     this.productServices.addToChart(product);
+    for (let index = 0; index < this.productServices.items.length; index++) { 
+      if(this.productServices.items[index] == product){
+        alert(this.productServices.items[index].nev + " sikeresen a kosába került!");
+      }
+    }
   }
   showAll(){
     this.productServices.getProducts().subscribe((res) => {

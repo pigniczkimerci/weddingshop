@@ -1,10 +1,13 @@
 
-<mat-list class="cart">
-    <div class="c-items">
-        <mat-list-item *ngFor='let product of cart'> 
-            <p id="nev">{{product.nev}}</p>
-            <p id="ar">{{product.ar | format}}  </p>
-        </mat-list-item>
-    </div>
-    
-</mat-list>
+<table class="cart">
+    <tbody class="c-items">
+        <tr id="id">
+            <th>Név</th>
+            <th>Ár</th>
+        </tr>
+        <tr *ngFor='let product of cart' id="products">
+            <td>{{product.nev}}</td>
+            <td>{{product.ar | format}}</td>
+        </tr>
+    </tbody>
+</table>
