@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .cart {
-    margin: 200px 50px;
+    margin: 250px 50px;
     display: flex;
     justify-content: center;
     background-color: $second-color-w;
@@ -34,12 +34,42 @@
 .sum{
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
+    margin-bottom: 400px;
     color: $second-color-w;
     font-family: $second-font;
     font-size: 2em;
     p:nth-child(2){
         padding-left: 10px;
+    }
+    button{
+        appearance: none;
+        background-color: transparent;
+        border: 0.125em solid $second-color-w;
+        box-sizing: border-box;
+        color: $second-color-w;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 0.5em 2em;
+        margin-left: 30px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        letter-spacing: 2px;
+        font-family: $second-font;
+    }
+    button:hover {
+        background-color: $second-color-w;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+        color: $white-color;
+    }
+       
+    button:active {
+        box-shadow: none;
+        transform: translateY(0);
     }
 }
 @media screen and(max-width: 530px) {

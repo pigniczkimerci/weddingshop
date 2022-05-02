@@ -50,7 +50,7 @@ export class ProductsService {
   addToChart(product: any) {
       this.items.push(product);
       this.cartItems.push(product);
-
+      
   }
   sum(){
     for (let index = 0; index < this.cartItems.length; index++) {
@@ -58,6 +58,12 @@ export class ProductsService {
     }
     return this.total;
   }
+
+  clear(){
+    this.cartItems = [];
+    this.total = 0;
+  }
+
   getCart() {
     return this.items;
   }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
@@ -7,7 +7,8 @@ import { ProductsService } from 'src/app/services/products.service';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.scss']
+  styleUrls: ['./shop.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ShopComponent implements OnInit {
   @Input() products: any[] | undefined;

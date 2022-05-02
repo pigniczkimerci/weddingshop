@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from 'src/app/model/cart.model';
 import { ProductsService } from 'src/app/services/products.service';
@@ -17,11 +17,14 @@ export class ShoppingbagComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cart = this.productServices.items;
+    this.cart = this.productServices.cartItems;
     this.cartNumber = this.productServices.sum();
-    console.log(this.productServices.cartItems)
   }
   ngAfterViewInit(){
     this.productServices.total = 0;
+  }
+  toClear(){
+    this.productServices.clear();
+    window.location.reload();
   }
 }

@@ -5,4 +5,12 @@
     padding: 2% 0;
     text-align: center;
     font-family: $second-font;
+    .contactus{ 
+        margin-top: 1%;
+        .mat-list-item-content{
+            justify-content: center;
+            
+        }
+        
+    }
 }

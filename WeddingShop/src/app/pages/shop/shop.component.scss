@@ -1,10 +1,13 @@
 @import '../../../styles.scss';
-.shop{
+
+.shop {
     padding-top: 8%;
-    .show{
+
+    .show {
         display: flex;
         justify-content: center;
-        button{
+
+        button {
             margin: 0 30px;
             border-radius: 7px;
             border: 0.125em solid $second-color-w;
@@ -14,43 +17,52 @@
             padding: 10px 30px;
             transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         }
-        button:hover{
+
+        button:hover {
             background-color: $second-color-d;
             transform: translateY(-2px);
         }
     }
-    .products{
+
+    .products {
         margin: 40px;
-        .product{ 
-            box-shadow: $box-shadow;
+
+        .product {
+            box-shadow: $box-shadow2;
             border-radius: 20px;
             text-align: center;
-            .item{
+
+            .item {
                 height: 100%;
                 padding-top: 60px;
-                
+
                 font-weight: 600;
-                img{
+
+                img {
                     height: 170px;
                     border-radius: 5px;
                     user-select: none;
                 }
-                #nev{
+
+                #nev {
                     color: $second-color-w;
                     font-size: 1.7em;
                     font-family: $primary-font;
-                    
+
                 }
-                #ar{
+
+                #ar {
                     color: $main-color;
                     font-size: 1.1em;
                     font-family: $second-font;
                 }
-                #id{
+
+                #id {
                     color: $main-color;
                     font-size: 6px;
                 }
-                button{
+
+                button {
                     appearance: none;
                     background-color: transparent;
                     border: 0.125em solid $second-color-w;
@@ -68,32 +80,35 @@
                     letter-spacing: 2px;
                     font-family: $second-font;
                 }
+
                 button:hover {
                     background-color: $second-color-w;
                     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
                     transform: translateY(-2px);
                     color: $white-color;
                 }
-                   
+
                 button:active {
                     box-shadow: none;
                     transform: translateY(0);
                 }
             }
         }
-        
+
     }
-    .crud{
+
+    .crud {
         text-align: center;
         background-color: $second-color-w;
         padding: 50px;
-        
-        h1{
+
+        h1 {
             color: $white-color;
             font-family: $primary-font;
             margin-bottom: 15px;
         }
-        input{
+
+        input {
             padding: 20px;
             margin: 10px;
             border-radius: 15px;
@@ -102,7 +117,8 @@
             background-color: $white-color;
             border: 0.125em solid $second-color-w;
         }
-        button{
+
+        button {
             border-radius: 7px;
             background-color: $main-color;
             cursor: pointer;
@@ -113,108 +129,136 @@
             padding: 10px 30px;
             transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         }
-        button:hover{
+
+        button:hover {
             color: $second-color-w;
             transform: translateY(-2px);
         }
-    }   
-   
+    }
+
 }
 
 @media screen and(max-width: 1860px) {
-    .products{
-        .product{ 
-            .item{
-                img{
+    .products {
+        .product {
+            .item {
+                img {
                     height: 100px !important;
                 }
             }
         }
     }
 }
+
 @media screen and(max-width: 1450px) {
-    .shop{
+    .shop {
         padding-top: 13%;
-    .products{
-        .product{ 
-            .item{
-                img{
-                    height: 100px !important;
-                }
-                #nev{
-                    font-size: 1.1em !important;
-                }
-                #ar{
-                    font-size:0.7em !important;
-                }
-                button{
-                    font-size: 11px !important;
-                    padding: 0.2em 0.5em !important;
+
+        .products {
+            .product {
+                .item {
+                    img {
+                        height: 70px !important;
+                    }
+
+                    #nev {
+                        font-size: 1.1em !important;
+                    }
+
+                    #ar {
+                        font-size: 0.7em !important;
+                    }
+
+                    button {
+                        font-size: 11px !important;
+                        padding: 0.2em 0.5em !important;
+                    }
                 }
             }
         }
     }
 }
-}
+
 @media screen and(max-width: 1300px) {
-    .products{
-        .product{ 
-            
-            .item{
-                img{
-                    height: 500px !important;
-                }
-                #nev{
-                    font-size: 2.7em !important;
-                }
-                #ar{
-                    font-size:2.2em !important;
-                }
-                button{
-                    font-size: 20px !important;
-                    padding: 0.8em 1.5em !important;
-                }
-            }
-        }
-    }
-}
-@media screen and(max-width: 1030px) {
-    .products{
-        .product{ 
-            .item{
-                img{
-                    height: 300px !important;
-                }
-                #nev{
-                    font-size: 2em !important;
-                }
-                #ar{
-                    font-size:1.6em !important;
-                }
-                button{
-                    font-size: 13px !important;
-                    padding: 0.8em 1.5em !important;
+    .products {
+        .product {
+            .mat-grid-tile-content {
+                .item {
+                    width: 80% !important;
+
+                    img {
+                        height: 400px !important;
+                    }
+
+                    #nev {
+                        font-size: 2.7em !important;
+                    }
+
+                    #ar {
+                        font-size: 2.2em !important;
+                    }
+
+                    button {
+                        font-size: 20px !important;
+                        padding: 0.8em 1.5em !important;
+                    }
                 }
             }
         }
     }
 }
+
+@media screen and(max-width: 1000px) {
+    .products {
+        .product {
+            .mat-grid-tile-content {
+                .item {
+                    img {
+                        height: 300px !important;
+                    }
+
+                    #nev {
+                        font-size: 2em !important;
+                    }
+
+                    #ar {
+                        font-size: 1.6em !important;
+                    }
+
+                    button {
+                        font-size: 13px !important;
+                        padding: 0.8em 1.5em !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and(max-width: 720px) {
-    .products{
-        .product{ 
-            .item{
-                img{
-                    height: 200px !important;
-                }
-                #nev{
-                    font-size: 1.5em !important;
-                }
-                #ar{
-                    font-size:1.1em !important;
-                }
-                button{
-                    font-size: 11px !important;
-                
+    .shop {
+        padding-top: 20%;
+        .products {
+            .product {
+                .mat-grid-tile-content {
+                    .item {
+                        img {
+                            height: 150px !important;
+                        }
+
+                        #nev {
+                            font-size: 1.5em !important;
+                        }
+
+                        #ar {
+                            font-size: 1.1em !important;
+                        }
+
+                        button {
+                            font-size: 11px !important;
+
+                        }
+                    }
                 }
             }
         }
