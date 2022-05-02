@@ -18,5 +18,6 @@ export class LogoutComponent implements OnInit {
     this.isLogout.emit()
     this.router.navigate(["/home"]);
     this.firebaseService.isLoggedIn = false;
+    sessionStorage.clear();
   }
 }

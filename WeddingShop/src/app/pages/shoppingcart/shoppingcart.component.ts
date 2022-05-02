@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from 'src/app/model/cart.model';
 import { ProductsService } from 'src/app/services/products.service';
@@ -8,7 +8,7 @@ import { ShopComponent } from '../shop/shop.component';
   templateUrl: './shoppingcart.component.html',
   styleUrls: ['./shoppingcart.component.scss']
 })
-export class ShoppingbagComponent implements OnInit {
+export class ShoppingcartComponent implements OnInit {
 
   cart: any = [];
   cartNumber: number = 0;

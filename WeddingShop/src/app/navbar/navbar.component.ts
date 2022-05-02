@@ -1,3 +1,4 @@
+import { trigger } from '@angular/animations';
 import { Component, OnInit, Output, EventEmitter, HostBinding, HostListener} from '@angular/core';
 import { SignupComponent } from '../pages/signup/signup.component';
 import { FirebaseService } from '../services/firebase.service';
@@ -35,7 +36,8 @@ export class NavbarComponent implements OnInit {
     this.navbarOpened = !this.navbarOpened;
   }
   get userInfo(){
-    return this.firebaseService.isLoggedIn;
+    if(sessionStorage.length != 0) return true;
+    return false;
   }
   
 }

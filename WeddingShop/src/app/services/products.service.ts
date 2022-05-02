@@ -23,7 +23,6 @@ export class ProductsService {
   total: number = 0;
   items: Array<Product> = [];
   cartItems: Array<Cart> = [];
-  //cart = new BehaviorSubject({});
   productsCollection: AngularFirestoreCollection;
   cartKey: string = "";
 

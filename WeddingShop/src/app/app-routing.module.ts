@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
-import { ShoppingbagComponent } from './pages/shoppingcart/shoppingcart.component';
+import { ShoppingcartComponent } from './pages/shoppingcart/shoppingcart.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { AuthService } from './auth/auth.service.ts.service';
@@ -17,8 +17,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path:"shoppingbag", 
-    component:ShoppingbagComponent,
+    path:"shoppingcart", 
+    component:ShoppingcartComponent,
     canActivate: [AuthGuard]
   },
   {path:"signup", component:SignupComponent},

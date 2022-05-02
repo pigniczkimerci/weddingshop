@@ -30,7 +30,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
-import { ShoppingbagComponent } from './pages/shoppingcart/shoppingcart.component';
+import { ShoppingcartComponent } from './pages/shoppingcart/shoppingcart.component';
 
 import { FooterComponent } from './footer/footer.component';
 import { FirebaseService } from './services/firebase.service';
@@ -50,7 +50,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NavbarComponent,
     HomeComponent,
     ShopComponent,
-    ShoppingbagComponent,
+    ShoppingcartComponent,
     SignupComponent,
     FooterComponent,
     LogoutComponent,
