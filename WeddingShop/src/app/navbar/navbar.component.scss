@@ -1,7 +1,4 @@
 @import '../../styles.scss';
-
-
-
 .navbar {
     position: absolute;
     width: 100%;
@@ -14,36 +11,28 @@
     transition: padding 0.3s linear;
     -webkit-transition: padding 0.3s linear;
     z-index: 999;
-
 }
-
 .navbar>.container {
     height: auto;
 }
-
 .navbartop-btn:hover .mat-button-focus-overlay {
     display: none;
 }
-
 .navbar:not(.navbar-fixed) .navbartop-btn .mat-button-ripple {
     top: -22px;
     bottom: -22px;
 }
-
 .navbar-logo {
     display: flex;
     align-items: center;
-
     padding-left: 10px;
     font-family: $primary-font;
-
     a {
         text-decoration: none;
         color: $white-color;
         font-size: 1.8em;
     }
 }
-
 .top-navbar {
     position: absolute;
     right: 0;
@@ -56,6 +45,9 @@
         font-weight: bold;
         letter-spacing: 3px;
     }
+    a:hover{
+        color: $second-color-w;
+    }
 }
 
 .navbar-fixed {
@@ -66,11 +58,9 @@
     padding: 0 !important;
     box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
     animation: .6s slideDown forwards;
-
     .container {
         height: 60px !important;
     }
-
     .navbartop-btn {
         line-height: 60px !important;
     }
