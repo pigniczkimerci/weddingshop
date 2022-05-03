@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Breakpoints } from 'src/app/model/breakpoints';
 import { Product } from 'src/app/model/product';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -10,11 +11,10 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./shop.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ShopComponent implements OnInit {
+export class ShopComponent implements OnInit, Breakpoints {
   @Input() products: any[] | undefined;
   @Input() productsQ: Observable<any[]> | undefined;
   dekor: Observable<any[]> | undefined;
-  //items: any = [];
   formCreate = new FormGroup({
     newNev: new FormControl(''),
     newAr: new FormControl(''),
@@ -30,16 +30,30 @@ export class ShopComponent implements OnInit {
     deleteId: new FormControl('')
   })
   mybreakpoint: number | undefined;
+  public innerWidth: any;
   
+  m = 880;
+  s = 650;
+
   constructor(private productServices: ProductsService) { }
 
   ngOnInit(): void {
     this.productsQ = this.productServices.getProducts();
     this.showAll();
-    this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
+    this.innerWidth = window.innerWidth;
+    this.mybreakpoint = 4;
+   // this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
   }
   handleSize(event:any) {
-    this.mybreakpoint = (event.target.innerWidth <= 1300) ? 1 : 4;
+    if(this.innerWidth <= this.m && this.innerWidth > 650){
+      this.mybreakpoint = 2;
+    }else if(this.innerWidth <= this.s){
+      this.mybreakpoint = 1;
+    }else{
+      this.mybreakpoint = 4;
+    }
+    /*this.mybreakpoint = (event.target.innerWidth <= 880) ? 2 : 4;
+    this.mybreakpoint = (event.target.innerWidth <= 650) ? 1 : 4;*/
   }
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
     event.stopPropagation();
@@ -102,6 +116,9 @@ export class ShopComponent implements OnInit {
       this.formDelete.reset();
     });
   }
-
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.innerWidth = window.innerWidth;
+  }
 
 }

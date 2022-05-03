@@ -22,7 +22,8 @@
         form{
             display: flex;
             flex-direction: column;
-
+            font-family: $third-font;
+            color: $second-color-w;
             .mat-input-element {
                 /*border: 0.125em solid $second-color-w;*/
                 padding: 20px;

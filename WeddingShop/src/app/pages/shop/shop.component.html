@@ -5,7 +5,7 @@
     <button (click)="showPrice()">4000 > RENDEZVE</button>
   </div>
     <div class="products">
-      <mat-grid-list [cols]="mybreakpoint" [gutterSize]="'30px'" rowHeight="5:4" (window:resize)="handleSize($event)">
+      <mat-grid-list [cols]="mybreakpoint" [gutterSize]="'30px'" rowHeight="4:4" (window:resize)="handleSize($event)">
             <ng-container *ngFor='let product of products'>
                 <mat-grid-tile class="product" >
                     <div class="item">
