@@ -60,7 +60,7 @@
         padding: 10px 20px;
     
     }
-    #cp-button{
+    .cp-button{
         appearance: none;
         background-color: transparent;
         border: 0.125em solid $second-color-w;
@@ -81,13 +81,13 @@
         margin-left: 40%;
         margin-top: 10px;
     }
-    #cp-button:hover {
+    .cp-button:hover {
         background-color: $second-color-w;
         box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
         transform: translateY(-2px);
        }
        
-    #cp-button:active {
+    .cp-button:active {
         box-shadow: none;
         transform: translateY(0);
     }

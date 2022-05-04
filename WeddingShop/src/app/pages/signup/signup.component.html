@@ -12,7 +12,7 @@
           <mat-label for="email">Jelszó: </mat-label>
           <input matInput type="password" #passwordSignup/>
         </mat-form-field>
-      <button id="cp-button" (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
+      <button class="cp-button" (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
       </form>
     </mat-card>
     <div class="welchome half-containers">
@@ -38,7 +38,7 @@
         <mat-label for="email">Jelszó: </mat-label>
         <input matInput type="password" #password/>
       </mat-form-field>
-      <button id="cp-button" (click)="onSignin(email.value,password.value)">Sign in</button>
+      <button class="cp-button" (click)="onSignin(email.value,password.value)">Sign in</button>
       </form>
     </mat-card>
 
