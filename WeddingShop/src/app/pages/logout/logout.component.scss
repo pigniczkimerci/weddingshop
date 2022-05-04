@@ -20,3 +20,12 @@
         cursor: pointer;
     }
 }
+@media (max-width: 1000px) {
+    .logout{
+        padding: 30% 30%;
+        p{
+            font-size: 2em !important;
+        }
+    }
+
+}  

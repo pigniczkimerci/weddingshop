@@ -41,7 +41,8 @@ export class ShopComponent implements OnInit, Breakpoints {
     this.productsQ = this.productServices.getProducts();
     this.showAll();
     this.innerWidth = window.innerWidth;
-    this.mybreakpoint = 4;
+    this.handleSize(this);
+    //this.mybreakpoint = 4;
   }
   handleSize(event:any) {
     if(this.innerWidth <= this.m && this.innerWidth > 650){
