@@ -21,20 +21,19 @@ const DECREMENT = firebase.firestore.FieldValue.increment(-1);
 })
 export class ProductsService {
   total: number = 0;
+  array: Array<any> = [];
   items: Array<Product> = [];
   cartItems: Array<Cart> = [];
   productsCollection: AngularFirestoreCollection;
   cartKey: string = "";
-
+  cartString: string = "";
   constructor(private asf: AngularFirestore,private http: HttpClient) {
 
     this.productsCollection = this.asf.collection("weddingshop");
   }
-
   ngOnInit(): void {
 
   }
-
   getProducts() : Observable<any> {
     return this.productsCollection.valueChanges({idField: "id" } );
   }
@@ -49,18 +48,23 @@ export class ProductsService {
   addToChart(product: any) {
       this.items.push(product);
       this.cartItems.push(product);
-      
+      this.cartString = JSON.stringify(this.cartItems);
+      sessionStorage.setItem("cart", this.cartString);
   }
   sum(){
     for (let index = 0; index < this.cartItems.length; index++) {
       this.total += Number(this.cartItems[index].ar);
+      this.array.push(this.total);
+      sessionStorage.setItem("totals", JSON.stringify(this.array))
     }
-    return this.total;
+   return JSON.parse(sessionStorage.getItem("totals") || "[]");
   }
 
   clear(){
     this.cartItems = [];
     this.total = 0;
+    sessionStorage.removeItem("cart");
+    sessionStorage.removeItem("totals");
   }
 
   getCart() {

@@ -11,14 +11,17 @@ import { ShopComponent } from '../shop/shop.component';
 export class ShoppingcartComponent implements OnInit {
 
   cart: any = [];
-  cartNumber: number = 0;
+  num: any = [];
+  cartNumber: string | null | undefined;
+  obj: any;
   constructor(private productServices: ProductsService) {
     
   }
 
   ngOnInit(): void {
-    this.cart = this.productServices.cartItems;
-    this.cartNumber = this.productServices.sum();
+    this.cart = JSON.parse(sessionStorage.getItem("cart") || '[]');
+    this.num = this.productServices.sum();
+    this.cartNumber = this.num[this.num.length -1];
   }
   ngAfterViewInit(){
     this.productServices.total = 0;

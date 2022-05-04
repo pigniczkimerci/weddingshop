@@ -13,7 +13,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ShopComponent implements OnInit, Breakpoints {
   @Input() products: any[] | undefined;
-  @Input() productsQ: Observable<any[]> | undefined;
+  @Input() productsQ: Observable<Product[]> | undefined;
   dekor: Observable<any[]> | undefined;
   formCreate = new FormGroup({
     newNev: new FormControl(''),
@@ -42,7 +42,6 @@ export class ShopComponent implements OnInit, Breakpoints {
     this.showAll();
     this.innerWidth = window.innerWidth;
     this.mybreakpoint = 4;
-   // this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 4;
   }
   handleSize(event:any) {
     if(this.innerWidth <= this.m && this.innerWidth > 650){
@@ -52,8 +51,6 @@ export class ShopComponent implements OnInit, Breakpoints {
     }else{
       this.mybreakpoint = 4;
     }
-    /*this.mybreakpoint = (event.target.innerWidth <= 880) ? 2 : 4;
-    this.mybreakpoint = (event.target.innerWidth <= 650) ? 1 : 4;*/
   }
   addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
     event.stopPropagation();
