@@ -1,7 +1,6 @@
 @import '../../styles.scss';
 .footer{
     background-color: $main-color;
-
     padding: 2% 0;
     text-align: center;
     font-family: $second-font;
@@ -12,7 +11,6 @@
         .mat-list-item-content{
             justify-content: center;
             
-        }
-        
+        }   
     }
 }

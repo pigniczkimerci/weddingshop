@@ -71,8 +71,4 @@ export class ProductsService {
     return this.items;
   }
 
-  onCreate(){
-    
-  }
-
 }

@@ -56,13 +56,6 @@ export class SignupComponent implements OnInit {
         }
       }
     });
-
-   /* await this.firebaseService.signup(email,password)
-    if(this.firebaseService.isLoggedIn)
-    this.isSignedIn = true
-    this.users.push({email: email, password: password});
-    sessionStorage.setItem('token',JSON.stringify(this.users));
-    this.router.navigate(["/home"]);*/
   }
   async onSignin(email:string,password:string){
     await this.firebaseService.signin(email, password)
@@ -87,11 +80,5 @@ export class SignupComponent implements OnInit {
         }
       }
     });
-  /*  await this.firebaseService.signin(email,password)
-    if(this.firebaseService.isLoggedIn)
-    this.isSignedIn = true
-    this.users.push({email: email, password: password});
-    sessionStorage.setItem('token',JSON.stringify(this.users));
-    this.router.navigate(["/home"]);*/
   }
 }

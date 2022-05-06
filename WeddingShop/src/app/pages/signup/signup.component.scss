@@ -25,19 +25,14 @@
             font-family: $third-font;
             color: $second-color-w;
             .mat-input-element {
-                /*border: 0.125em solid $second-color-w;*/
                 padding: 20px;
                 margin: 20px;
                 width: 90%;
-                
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
                 border: 1px solid rgba(208, 182, 168, 0.144);
                 background: rgba(208, 182, 168, 0.274);
             }
-    
         }
-        
-
     }
     .welchome{
         background-color: $second-color-w;
