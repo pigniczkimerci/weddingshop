@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 22px 0;
+    padding: 15px 0;
     transition: padding 0.3s linear;
     -webkit-transition: padding 0.3s linear;
     z-index: 999;
@@ -25,12 +25,10 @@
 .navbar-logo {
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 20px;
     font-family: $primary-font;
-    a {
-        text-decoration: none;
-        color: $white-color;
-        font-size: 1.8em;
+    img {
+        width: 60px;
     }
 }
 .top-navbar {
@@ -56,13 +54,13 @@
     right: 0;
     top: 0;
     padding: 0 !important;
-    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+    box-shadow: $box-shadow;
     animation: .6s slideDown forwards;
     .container {
-        height: 60px !important;
+        height: 80px !important;
     }
     .navbartop-btn {
-        line-height: 60px !important;
+        line-height: 80px !important;
     }
 }
 
@@ -105,6 +103,9 @@
 
     .navbar-logo {
         margin-left: 15px;
+        img{
+            width: 40px;
+        }
     }
 
     .top-navbar {

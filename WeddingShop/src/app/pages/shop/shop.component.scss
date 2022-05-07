@@ -15,12 +15,14 @@
             transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         }
         button:hover {
-            background-color: $second-color-d;
+            background-color: $main-color;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
             transform: translateY(-2px);
         }
     }
     .products {
         margin: 40px;
+        z-index: 100;
         .product {
             box-shadow: $box-shadow2;
             border-radius: 20px;
@@ -111,6 +113,7 @@
         }
         button:hover {
             color: $second-color-w;
+            box-shadow: $box-shadow;
             transform: translateY(-2px);
         }
     }

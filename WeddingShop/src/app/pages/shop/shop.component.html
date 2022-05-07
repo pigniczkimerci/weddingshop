@@ -8,11 +8,11 @@
       <mat-grid-list [cols]="mybreakpoint" [gutterSize]="'30px'" rowHeight="4:4" (window:resize)="handleSize($event)">
             <ng-container *ngFor='let product of products'>
                 <mat-grid-tile class="product" >
-                    <div class="item">
+                    <div class="item" >
                       <p id="id">{{product.id}}</p>
-                      <img src={{product.kep}}/>
-                      <p id="nev">{{product.nev}}</p>
-                      <p id="ar">{{product.ar | format}}</p><br>
+                      <img data-aos="flip-left"  data-aos-duration="1000" src={{product.kep}}/>
+                      <p   id="nev">{{product.nev}}</p>
+                      <p  id="ar">{{product.ar | format}}</p><br>
                       <button mat-button (click)="addToChart($event, product)">KOSÁRBA</button>
                     </div>
                 </mat-grid-tile>
@@ -20,7 +20,7 @@
         </mat-grid-list>
 
     </div>  
-     <div class="crud">
+     <div class="crud" >
        <h1>Adatbázis frissítése</h1>
           <form [formGroup]="this.formCreate">
             <input placeholder="Nev" formControlName="newNev" type="text" class="input-field col s12" />

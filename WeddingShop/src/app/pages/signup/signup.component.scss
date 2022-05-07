@@ -15,8 +15,7 @@
         .mat-card-title{
             font-family: $primary-font;
             font-size: 3em;
-            
-            padding: 70px;
+            padding: 50px 70px 50px 70px;
             color: $second-color-d;
         }
         form{
@@ -41,12 +40,12 @@
             font-family: $primary-font;
             font-size: 2em;
             text-align: center;
-            padding: 70px;
+            padding: 110px 70px 50px 70px;
         }
         p{
             text-align: justify;
             font-family: $third-font;
-            padding: 0px 80px 80px 80px;
+            padding: 0px 80px 120px 80px;
         }
 
     }

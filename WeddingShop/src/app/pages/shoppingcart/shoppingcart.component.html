@@ -1,16 +1,16 @@
 <table class="cart">
     <tbody class="c-items">
-        <tr id="id">
+        <tr id="id" data-aos="zoom-in">
             <th>Név</th>
             <th>Ár</th>
         </tr>
-        <tr *ngFor='let product of cart' id="products">
+        <tr *ngFor='let product of cart' id="products" data-aos="zoom-in">
             <td>{{product.nev}}</td>
             <td>{{product.ar | format}}</td>
         </tr>
     </tbody>
 </table>
-<div class="sum">
+<div class="sum" data-aos="zoom-in">
     <p> Összesen:</p>
     <p>{{cartNumber | format}}</p>
     <button (click)="toClear()">Rendelés törlése</button>
