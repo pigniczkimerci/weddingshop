@@ -29,5 +29,7 @@ export class ShoppingcartComponent implements OnInit {
   toClear(){
     this.productServices.clear();
     window.location.reload();
+    alert("Sikeres rendelés! A rendelésed 23642398632489 nap múlva érkezik!")
   }
 }
+

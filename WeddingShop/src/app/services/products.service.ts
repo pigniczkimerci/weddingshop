@@ -28,7 +28,6 @@ export class ProductsService {
   cartKey: string = "";
   cartString: string = "";
   constructor(private asf: AngularFirestore,private http: HttpClient) {
-
     this.productsCollection = this.asf.collection("weddingshop");
   }
   ngOnInit(): void {
