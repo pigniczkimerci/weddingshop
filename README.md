@@ -1,3 +1,7 @@
+### igen összecseréltem a mobilalkot meg a webkertet:
+## https://github.com/pigniczkimerci/weddingshopJava
+
+
 ## Esküvői dekoráció webshop
 
 1. npm install
@@ -13,5 +17,3 @@
 
 https://fir-angular-cbe7c.web.app/home
 
-igen összecseréltem a mobilalkot meg a webkerter:
-https://github.com/pigniczkimerci/weddingshopJava
