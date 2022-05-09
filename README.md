@@ -12,3 +12,6 @@
 - Ha valami nem megy akkor keress dc-n: (.merci.)#3589
 
 https://fir-angular-cbe7c.web.app/home
+
+igen összecseréltem a mobilalkot meg a webkerter:
+https://github.com/pigniczkimerci/weddingshopJava
