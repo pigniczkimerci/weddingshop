@@ -12,7 +12,7 @@ import { FirebaseService } from '../services/firebase.service';
 export class NavbarComponent implements OnInit {
 
   public show:boolean = false;
-  isFixedNavbar: any;
+  isFixedNavbar!: boolean;
   @HostBinding('class.navbar-opened') navbarOpened = false;
 
   opened = false;

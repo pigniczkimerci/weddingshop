@@ -21,7 +21,7 @@ const DECREMENT = firebase.firestore.FieldValue.increment(-1);
 })
 export class ProductsService {
   total: number = 0;
-  array: Array<any> = [];
+  array: Array<number> = [];
   items: Array<Product> = [];
   cartItems: Array<Cart> = [];
   productsCollection: AngularFirestoreCollection;

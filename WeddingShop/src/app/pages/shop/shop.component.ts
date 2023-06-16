@@ -12,9 +12,9 @@ import { ProductsService } from 'src/app/services/products.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ShopComponent implements OnInit, Breakpoints {
-  @Input() products: any[] | undefined;
+  @Input() products: Product[] | undefined;
   @Input() productsQ: Observable<Product[]> | undefined;
-  dekor: Observable<any[]> | undefined;
+  //dekor: Observable<any[]> | undefined;
   formCreate = new FormGroup({
     newNev: new FormControl(''),
     newAr: new FormControl(''),
@@ -30,7 +30,7 @@ export class ShopComponent implements OnInit, Breakpoints {
     deleteId: new FormControl('')
   })
   mybreakpoint: number | undefined;
-  public innerWidth: any;
+  public innerWidth!: number;
   
   m = 880;
   s = 650;
@@ -52,7 +52,7 @@ export class ShopComponent implements OnInit, Breakpoints {
       this.mybreakpoint = 4;
     }
   }
-  addToChart(event: { stopPropagation: () => void; }, product: { id: any; }){
+  addToChart(event: { stopPropagation: () => void; }, product: { id: number; }){
     event.stopPropagation();
     this.productServices.addToChart(product);
     for (let index = 0; index < this.productServices.items.length; index++) { 
@@ -69,13 +69,13 @@ export class ShopComponent implements OnInit, Breakpoints {
   }
   showDekor(){
     this.productServices.getDekor().subscribe((res) => {
-      this.products = res;
+      this.products = res as Product[];
     })
   }
 
   showPrice(){
     this.productServices.getPrice().subscribe((res) => {
-      this.products = res;
+      this.products = res as Product[];
     })
   }
 
@@ -115,7 +115,7 @@ export class ShopComponent implements OnInit, Breakpoints {
     });
   }
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize(event: Event) {
     this.innerWidth = window.innerWidth;
   }
 

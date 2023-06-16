@@ -10,10 +10,9 @@ import { ShopComponent } from '../shop/shop.component';
 })
 export class ShoppingcartComponent implements OnInit {
 
-  cart: any = [];
-  num: any = [];
+  cart: Array<Cart> = [];
+  num: Array<string> = [];
   cartNumber: string | null | undefined;
-  obj: any;
   constructor(private productServices: ProductsService) {
     
   }
