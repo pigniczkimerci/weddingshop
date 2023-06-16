@@ -44,9 +44,10 @@ export class ProductsService {
     return this.asf.collection('weddingshop', ref => ref.where('ar', '>', 4000).orderBy('ar')).valueChanges();
   }
 
-  addToChart(product: any) {
+  addToChart(product: Product) {
+      const cartItem: Cart = { ...product, mennyiseg: 1 };
       this.items.push(product);
-      this.cartItems.push(product);
+      this.cartItems.push(cartItem);
       this.cartString = JSON.stringify(this.cartItems);
       sessionStorage.setItem("cart", this.cartString);
   }

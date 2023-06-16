@@ -2,5 +2,8 @@ export interface  Cart {
     id: number;
     nev: string;
     ar: number;
-    total: number;
+    kategoria: string;
+    kep:string;
+    mennyiseg: number;
+    /*total: number;*/
 }

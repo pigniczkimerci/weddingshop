@@ -3,10 +3,18 @@
         <tr id="id" data-aos="zoom-in">
             <th>Név</th>
             <th>Ár</th>
+            <th>Mennyiség</th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
         <tr *ngFor='let product of cart' id="products" data-aos="zoom-in">
             <td>{{product.nev}}</td>
             <td>{{product.ar | format}}</td>
+            <td>{{ product.mennyiseg }}</td>
+            <td><i class="fa-solid fa-plus" (click)="addItem(product)"></i></td>
+            <td><i class="fa-solid fa-minus" (click)="removeItem(product)"></i></td>
+            <td><i class="fa-solid fa-trash" (click)="deleteItem(product)"></i></td>
         </tr>
     </tbody>
 </table>

@@ -52,7 +52,7 @@ export class ShopComponent implements OnInit, Breakpoints {
       this.mybreakpoint = 4;
     }
   }
-  addToChart(event: { stopPropagation: () => void; }, product: { id: number; }){
+  addToChart(event: { stopPropagation: () => void; }, product: Product){
     event.stopPropagation();
     this.productServices.addToChart(product);
     for (let index = 0; index < this.productServices.items.length; index++) { 
